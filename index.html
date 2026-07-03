@@ -545,7 +545,7 @@
         addToCart(name, price);
     }
 
-    function showImage() {
+   function showImage() {
         const type = document.getElementById('service-type').value;
         const imgElement = document.getElementById('display-image');
         const actions = document.getElementById('product-actions');
@@ -557,13 +557,14 @@
             return;
         }
 
+        // تم تحديث الأسماء هنا لتطابق الأسماء الجديدة التي رفعتها
         const images = {
-            "ورود": "باقة الورود.png",
-            "زفاف": "تشريع سيارات.png",
-            "تخرج": "باقة التخرج.png",
-            "مناسبة خاصة / حب": "باقة المناسبات.png",
-            "عيد ميلاد": "باقة هبي بايرث داي.png",
-            "اعتذار": "باقه كبيره مع باتشي.png"
+            "ورود": "baqat_alwurood.png",
+            "زفاف": "tashree_sayarat.png",
+            "تخرج": "baqat_altakharr.png",
+            "مناسبة خاصة / حب": "baqat_almunasabat.png",
+            "عيد ميلاد": "baqat_happy_birthday.png",
+            "اعتذار": "baqat_kabira_batchi.png"
         };
 
         if (imgElement) {
@@ -573,6 +574,7 @@
         if (actions) actions.style.display = 'block';
         if (priceDisplay) priceDisplay.innerText = prices[type] || 0;
     }
+    
 
     function zoomImage(src) {
         const modal = document.getElementById('imageModal');
