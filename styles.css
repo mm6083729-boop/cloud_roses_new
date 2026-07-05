@@ -322,37 +322,37 @@ textarea {
 @media (max-width:768px){
 
     .container{
-        width:100%;
-        padding:15px;
+        width:101%;
+        padding:-15px;
     }
+.logo-area{
+    position: relative;
+    right: -10px;      /* يحرك الشعار قليلًا لليمين */
+    top: -6px;        /* يرفعه قليلًا للأعلى */
 
-    .logo-area{
-        right:0;
-        top:0;
-        position:static;
-        gap:8px;
-         position: relative;
-    right: -3px;  /* يحركه أكثر إلى اليمين */
-    top: -3px;    /* يرفعه للأعلى */
-    }
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-    .logo-area img{
-        width:45px;
-        height:45px;
-    }
+.logo-area img{
+    width: 42px;
+    height: 42px;
+}
 
-    .logo-area h1{
-        font-size:18px;
-    }
+.logo-area h1{
+    font-size: 17px;
+    margin: 0;
+}
 
-    .logo-area span{
-        font-size:12px;
-    }
+.logo-area span{
+    font-size: 11px;
+}
 
-    .header-rating{
-        font-size:11px;
-    }
-
+.header-rating{
+    margin-top: 3px;
+    font-size: 10px;
+}
     
 
    nav{
