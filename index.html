@@ -105,29 +105,48 @@
 <body>
 
 <header>
+
     <div class="container">
-        <div class="logo-area">
-            <img src="logo.png" alt="غيمة وورد">
-            <div>
-                <h1>غيمة وورد</h1>
-                <span>Cloud & Roses</span>
+
+        <div class="header-top">
+
+            <div class="logo-area">
+                <img src="logo.png" alt="غيمة وورد">
+
+                <div class="logo-text">
+                    <h1>غيمة وورد</h1>
+                    <span>Cloud & Roses</span>
+
+                    <div class="header-rating">
+                        ⭐⭐⭐⭐⭐ 4.9/5 
+                    </div>
+                </div>
             </div>
+
+            <div class="store-hours">
+                🕓 4:00 م - 12:00 ص
+            </div>
+
         </div>
+
         <nav>
             <a href="#">الرئيسية</a>
             <a href="#products">المنتجات</a>
-            <a href="cart.html" id="cart-icon" style="position: relative; text-decoration: none; color: d81b60;">السلة 
-                <span id="cart-count" style="position: absolute; top: -10px; right: -10px; background: #d81b60; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
-            </a>
-            <a href="#reviews">آراء العملاء</a>
-            <a href="#social">تابعونا</a>   
-            <a href="#about">من نحن</a>
-            
-        <a href="#location">موقعنا</a>
-        </nav>
-    </div>
-</header>
 
+            <a href="cart.html" id="cart-icon" style="position:relative;text-decoration:none;">
+                السلة
+                <span id="cart-count">0</span>
+            </a>
+
+            <a href="#reviews">آراء العملاء</a>
+            <a href="#social">تابعونا</a>
+            <a href="#about">من نحن</a>
+            <a href="#location">موقعنا</a>
+        </nav>
+
+    </div>
+
+</header>
 <section class="hero">
     <h2>أجمل باقات الورد</h2>
     <br>
@@ -171,11 +190,15 @@
     }
 
     // تشغيل العدادات عند تحميل الصفحة
-    window.onload = function() {
-        animateCounter("counter1", 0, 500, 2000);
-        animateCounter("counter2", 0, 320, 2000);
-        animateCounter("counter3", 0, 5, 2000);
-    };
+   window.onload = function () {
+
+    animateCounter("orders-counter", 0, 500, 2000);
+
+    animateCounter("customers-counter", 0, 320, 2000);
+
+    animateCounter("rating-counter", 0, 49, 2000);
+
+};
 </script>
 
 <!-- القائمة -->
@@ -195,12 +218,27 @@
     <img id="display-image" src="" alt="اختر خدمة" style="display:none; width: 300px; border-radius: 15px;">
     <div id="product-actions" style="display:none; margin-top: 15px;">
     <p>السعر: <span id="product-price">0</span> ريال</p>
-    <button type="button" onclick="addToCart()">أضف للسلة 🛒</button>
+    <button type="button" onclick="addToCart()"class="add-to-cart-btn">أضف للسلة 🛒</button>
 </div>
 </div>
 
+<section class="stats-section">
 
+   <div class="stat-card">
+    <h2 id="orders-counter">0</h2>
+    <p>💐 طلب مكتمل</p>
+</div>
 
+<div class="stat-card">
+    <h2 id="customers-counter">0</h2>
+    <p>😊 عميل سعيد</p>
+</div>
+
+<div class="stat-card">
+    <h2 id="rating-counter">0</h2>
+    <p>⭐ تقييم العملاء</p>
+</div>
+</section>
     <h2 id="products" style="text-align: center; margin-top: 50px; font-size: 2.5rem; color: #1a1a1a;">منتجاتنا</h2>
 
     <br>
@@ -214,7 +252,7 @@
             <h3>باقة مناسبات</h3>
             <p class="description"></p>
             <p>180 ريال</p>
-            <button onclick="addToCartProduct('باقة مناسبات',180)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة مناسبات',180)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -222,7 +260,7 @@
             <h3>تشريع سيارات</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('تشريع سيارات',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('تشريع سيارات',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -230,7 +268,7 @@
             <h3>باقة التخرج</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة التخرج',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة التخرج',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -238,7 +276,7 @@
             <h3>باقة الحلويات</h3>
             <p class="description"></p>
             <p>250 ريال</p>
-            <button onclick="addToCartProduct('باقة الحلويات',250)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة الحلويات',250)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -246,7 +284,7 @@
             <h3>باقة الجمال</h3>
             <p class="description"></p>
             <p>300 ريال</p>
-            <button onclick="addToCartProduct('باقة الجمال',300)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة الجمال',300)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -255,7 +293,7 @@
             <h3>باقة التخرج2</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-                   <button onclick="addToCartProduct('باقة التخرج',200)">أضف للسلة</button>
+                   <button onclick="addToCartProduct('باقة التخرج',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -263,7 +301,7 @@
             <h3>باقة الفراشة</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة الفراشة',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة الفراشة',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -271,7 +309,7 @@
             <h3>باقة الكتكات</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة الكتكات',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة الكتكات',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -279,7 +317,7 @@
             <h3>باقة الورود</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة الورود',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة الورود',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -287,7 +325,7 @@
             <h3>باقة زاهيه</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة زاهيه',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة زاهيه',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -295,7 +333,7 @@
             <h3>باقة صغيره</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة صغيره',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة صغيره',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -303,7 +341,7 @@
             <h3>باقة كبيرة</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة كبيرة',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة كبيرة',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -311,7 +349,7 @@
             <h3>باقة كيندر</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة كيندر',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة كيندر',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div> 
 
         <div class="product-card">
@@ -319,7 +357,7 @@
             <h3>باقة30ورده</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة30ورده',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة30ورده',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
          
         <div class="product-card">
@@ -327,7 +365,7 @@
             <h3>باقة هبي بايرث داي</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة هبي بايرث داي',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة هبي بايرث داي',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -335,7 +373,7 @@
             <h3>باقة وسط</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة وسط',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة وسط',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -343,7 +381,7 @@
             <h3>باقة20ورد</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة20ورد',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة20ورد',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -351,7 +389,7 @@
             <h3>باقه كبيرة مع باتشي</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة كبيرة مع باتشي',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة كبيرة مع باتشي',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -359,7 +397,7 @@
             <h3>تنسق ورده</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة تنسق ورده',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('باقة تنسق ورده',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -367,7 +405,7 @@
             <h3>شنطة كيك</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('شنطة كيك',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('شنطة كيك',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -375,7 +413,7 @@
             <h3>فازة ورده</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('فازة ورده',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('فازة ورده',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -383,7 +421,7 @@
             <h3>هدية عنوان القهوة</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('هدية عنوان القهوة',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('هدية عنوان القهوة',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
@@ -391,7 +429,7 @@
             <h3>فازة مولود</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('فازة مولود',200)">أضف للسلة</button>
+            <button onclick="addToCartProduct('فازة مولود',200)" class="add-to-cart-btn">أضف للسلة</button>
         </div>
 
     </div>

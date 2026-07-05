@@ -107,3 +107,45 @@ function toggleReadMore() {
         btn.innerHTML = "عرض أقل";
     }
 }
+function animateCounter(id, start, end, duration) {
+
+    let obj = document.getElementById(id);
+    if (!obj) return;
+
+    let range = end - start;
+    let minTime = 30;
+    let stepTime = Math.max(Math.floor(duration / range), minTime);
+
+    let startTime = new Date().getTime();
+    let endTime = startTime + duration;
+
+    function run() {
+
+        let now = new Date().getTime();
+        let remaining = Math.max((endTime - now) / duration, 0);
+        let value = Math.round(end - (remaining * range));
+
+        if (id === "rating-counter") {
+            obj.innerHTML = (value / 10).toFixed(1) + "★";
+        } else {
+            obj.innerHTML = value + "+";
+        }
+
+        if (now < endTime) {
+            setTimeout(run, stepTime);
+        }
+    }
+
+    run();
+}
+
+// تشغيل العدادات عند فتح الصفحة
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Counter Started");
+    animateCounter("orders-counter", 0, 500, 2000);
+
+    animateCounter("customers-counter", 0, 320, 2000);
+
+    animateCounter("rating-counter", 0, 49, 2000);
+
+});
