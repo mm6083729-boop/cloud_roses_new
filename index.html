@@ -111,7 +111,8 @@
         <div class="header-top">
 
             <div class="logo-area">
-                <img src="logo.png" alt="غيمة وورد">
+                <img src="logo1.png" alt="غيمة وورد">
+                
 
                 <div class="logo-text">
                     <h1>غيمة وورد</h1>
@@ -142,6 +143,10 @@
             <a href="#social">تابعونا</a>
             <a href="#about">من نحن</a>
             <a href="#location">موقعنا</a>
+            <a href="favorites.html" class="favorites-link">
+    ❤️ المفضلة
+    <span id="fav-count">0</span>
+</a>
         </nav>
 
     </div>
@@ -253,6 +258,9 @@
             <p class="description"></p>
             <p>180 ريال</p>
             <button onclick="addToCartProduct('باقة مناسبات',180)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة مناسبات" onclick="toggleFavorite('باقة مناسبات')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -261,6 +269,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('تشريع سيارات',200)" class="add-to-cart-btn">أضف للسلة</button>
+                  <button class="favorite-btn" data-product="تشريع سيارات" onclick="toggleFavorite('تشريع سيارات')">
+   ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -269,6 +280,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة التخرج',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة التخرج" onclick="toggleFavorite('باقة التخرج')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -277,6 +291,9 @@
             <p class="description"></p>
             <p>250 ريال</p>
             <button onclick="addToCartProduct('باقة الحلويات',250)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة الحلويات" onclick="toggleFavorite('باقة الحلويات')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -285,6 +302,9 @@
             <p class="description"></p>
             <p>300 ريال</p>
             <button onclick="addToCartProduct('باقة الجمال',300)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة الجمال" onclick="toggleFavorite('باقة الجمال')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -294,6 +314,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
                    <button onclick="addToCartProduct('باقة التخرج',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة التخرج2" onclick="toggleFavorite('باقة التخرج2')">
+      ♡
+</button>       
         </div>
 
         <div class="product-card">
@@ -302,6 +325,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة الفراشة',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة الفراشة" onclick="toggleFavorite('باقة الفراشة')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -310,6 +336,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة الكتكات',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة الكتكات" onclick="toggleFavorite('باقة الكتكات')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -318,6 +347,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة الورود',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة الورود" onclick="toggleFavorite('باقة الورود')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -326,6 +358,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة زاهيه',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة زاهيه" onclick="toggleFavorite('باقة زاهيه')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -334,6 +369,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة صغيره',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة صغيره" onclick="toggleFavorite('باقة صغيره')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -342,6 +380,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة كبيرة',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة كبيرة" onclick="toggleFavorite('باقة كبيرة')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -349,7 +390,10 @@
             <h3>باقة كيندر</h3>
             <p class="description"></p>
             <p>200 ريال</p>
-            <button onclick="addToCartProduct('باقة كيندر',200)" class="add-to-cart-btn">أضف للسلة</button>
+        <button onclick="addToCartProduct('باقة كيندر',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة كيندر" onclick="toggleFavorite('باقة كيندر')">
+      ♡
+</button>
         </div> 
 
         <div class="product-card">
@@ -358,6 +402,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة30ورده',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة30ورده" onclick="toggleFavorite('باقة30ورده')">
+      ♡
+</button>
         </div>
          
         <div class="product-card">
@@ -366,6 +413,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة هبي بايرث داي',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة هبي بايرث داي" onclick="toggleFavorite('باقة هبي بايرث داي')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -374,6 +424,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة وسط',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة وسط" onclick="toggleFavorite('باقة وسط')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -382,6 +435,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة20ورد',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة20ورد" onclick="toggleFavorite('باقة20ورد')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -390,6 +446,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة كبيرة مع باتشي',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="باقة كبيرة مع باتشي" onclick="toggleFavorite('باقة كبيرة مع باتشي')">
+    ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -398,6 +457,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('باقة تنسق ورده',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn"data-product="باقة تنسق ورده" onclick="toggleFavorite('باقة تنسق ورده')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -406,6 +468,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('شنطة كيك',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn"data-product="شنطة كيك" onclick="toggleFavorite('شنطة كيك')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -414,6 +479,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('فازة ورده',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn"data-product="فازة ورده" onclick="toggleFavorite('فازة ورده')">
+     ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -422,6 +490,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('هدية عنوان القهوة',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn"data-product="هدية عنوان القهوة" onclick="toggleFavorite('هدية عنوان القهوة')">
+      ♡
+</button>
         </div>
 
         <div class="product-card">
@@ -430,6 +501,9 @@
             <p class="description"></p>
             <p>200 ريال</p>
             <button onclick="addToCartProduct('فازة مولود',200)" class="add-to-cart-btn">أضف للسلة</button>
+            <button class="favorite-btn" data-product="فازة مولود" onclick="toggleFavorite('فازة مولود')">
+     ♡
+</button>
         </div>
 
     </div>
@@ -521,122 +595,12 @@
     transform: scale(1.1);
   }
 </style>
-
-<script>
-    const prices = {
-        "ورود": 150,
-        "زفاف": 500,
-        "تخرج": 200,
-        "مناسبة خاصة / حب": 180,
-        "عيد ميلاد": 160,
-        "اعتذار": 250
-    };
-
-    window.addEventListener('DOMContentLoaded', () => {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let counter = document.getElementById('cart-count');
-        if (counter) counter.innerText = cart.length;
-    });
-
-  function saveToCart(name, price) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ name: name, price: price });
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // تحديث العداد
-    let counter = document.getElementById('cart-count');
-    if (counter) counter.innerText = cart.length;
-
-    // 1. تفعيل حركة الأيقونة
-    let icon = document.getElementById('cart-icon');
-    if (icon) {
-        icon.classList.add('cart-bounce');
-        setTimeout(() => { icon.classList.remove('cart-bounce'); }, 500);
-    }
-
-    // 2. إظهار شريط التنبيه (Toast)
-    let toast = document.getElementById('toast-message');
-    toast.style.display = 'block';
-    
-    // إخفاء الشريط بعد 3 ثواني
-    setTimeout(() => {
-        toast.style.display = 'none';
-    }, 3000);
-}
-    function addToCart(name, price) {
-        if (typeof name === 'undefined') {
-            const type = document.getElementById('service-type').value;
-            if (!type || !prices[type]) return;
-            saveToCart(type, prices[type]);
-            
-            return;
-        }
-
-        if (typeof price === 'undefined' && prices[name]) {
-            price = prices[name];
-        }
-        saveToCart(name, price);
-    
-    }
-
-    function addToCartProduct(name, price) {
-        addToCart(name, price);
-    }
-
-   function showImage() {
-        const type = document.getElementById('service-type').value;
-        const imgElement = document.getElementById('display-image');
-        const actions = document.getElementById('product-actions');
-        const priceDisplay = document.getElementById('product-price');
-
-        if (!type) {
-            if (imgElement) imgElement.style.display = 'none';
-            if (actions) actions.style.display = 'none';
-            return;
-        }
-
-        // تم تحديث الأسماء هنا لتطابق الأسماء الجديدة التي رفعتها
-        const images = {
-            "ورود": "baqat_alwurood.png",
-            "زفاف": "tashree_sayarat.png",
-            "تخرج": "baqat_altakharr.png",
-            "مناسبة خاصة / حب": "baqat_almunasabat.png",
-            "عيد ميلاد": "baqat_happy_birthday.png",
-            "اعتذار": "baqat_kabira_batchi.png"
-        };
-
-        if (imgElement) {
-            imgElement.src = images[type] || '';
-            imgElement.style.display = 'block';
-        }
-        if (actions) actions.style.display = 'block';
-        if (priceDisplay) priceDisplay.innerText = prices[type] || 0;
-    }
-    
-
-    function zoomImage(src) {
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalTargetImg');
-        if (modalImg) modalImg.src = src;
-        if (modal) modal.style.display = 'block';
-    }
-
-    function closeImage() {
-        const modal = document.getElementById('imageModal');
-        if (modal) modal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        const modal = document.getElementById('imageModal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    };
-</script>
 <!-- شريط التنبيه (معدل ليظهر في الأعلى) -->
 <div id="toast-message" style="display:none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #d81b60; color: white; padding: 15px 30px; border-radius: 50px; z-index: 10000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-weight: bold; text-align: center; width: 80%; max-width: 300px;">
     تمت الإضافة للسلة بنجاح! ✅
 </div>
 </div>
+<script src="products.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,151 +1,181 @@
-// مصفوفة الأسعار (تأكد من مطابقتها للقائمة في HTML)
 const prices = {
-    "ورود": 150,
-    "زفاف": 500,
-    "تخرج": 200,
-    "مناسبة خاصة / حب": 180,
-    "عيد ميلاد": 160,
-    "اعتذار": 250
-};
-
-let cart = []; // السلة الحقيقية
-
-// دالة العرض (تظهر الصورة والسعر)
-function showImage() {
-    const type = document.getElementById("service-type").value;
-    const imgElement = document.getElementById("display-image");
-    const actions = document.getElementById("product-actions");
-    const priceDisplay = document.getElementById("product-price");
-
-    if (type === "") {
-        imgElement.style.display = "none";
-        actions.style.display = "none";
-        return;
-    }
-
-    // تعيين الصورة بناءً على النوع
-    const images = {
-        "ورود": "باقة الورود.png",
-        "زفاف": "تشريع سيارات.png",
-        "تخرج": "باقة التخرج.png",
-        "مناسبة خاصة / حب": "باقة المناسبات.png",
-        "عيد ميلاد": "باقة هبي بايرث داي.png",
-        "اعتذار": "باقه كبيره مع باتشي.png"
+        "ورود": 150,
+        "زفاف": 500,
+        "تخرج": 200,
+        "مناسبة خاصة / حب": 180,
+        "عيد ميلاد": 160,
+        "اعتذار": 250
     };
 
-    imgElement.src = images[type];
-    imgElement.style.display = "block";
-    actions.style.display = "block";
-    priceDisplay.innerText = prices[type];
-}
-
-// دالة الإضافة الحقيقية للسلة
-function addToCart() {
-    const type = document.getElementById("service-type").value;
-    if (type === "") return; // لا تضيف إذا لم يختر شيئاً
-
-    const price = prices[type];
-    
-    // إضافة المنتج للمصفوفة
-    cart.push({ name: type, price: price });
-
-    // تحديث العرض في القائمة
-    updateCartList();
-}
-
-function updateCartList() {
-    const cartList = document.getElementById("cart-list");
-    const totalDisplay = document.getElementById("cart-total");
-    
-    cartList.innerHTML = ""; // مسح القائمة القديمة لإعادة بنائها
-    let total = 0;
-
-    cart.forEach((item) => {
-        let li = document.createElement("li");
-        li.innerText = `${item.name} - ${item.price} ريال`;
-        cartList.appendChild(li);
-        total += item.price;
+    window.addEventListener('DOMContentLoaded', () => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let counter = document.getElementById('cart-count');
+        if (counter) counter.innerText = cart.length;
     });
 
-    totalDisplay.innerText = total;
-}
-// تهيئة عناصر واجهة المستخدم عند تحميل DOM
-document.addEventListener('DOMContentLoaded', function () {
-    const textElement = document.getElementById("about-text");
-    const btn = document.getElementById("readMoreBtn");
+  function saveToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name: name, price: price });
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-    if (!textElement || !btn) return;
+    // تحديث العداد
+    let counter = document.getElementById('cart-count');
+    if (counter) counter.innerText = cart.length;
 
-    // نتحقق إذا كان النص فعلياً يحتاج لزر "المزيد"
-    if (textElement.scrollHeight > textElement.clientHeight) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
+    // 1. تفعيل حركة الأيقونة
+    let icon = document.getElementById('cart-icon');
+    if (icon) {
+        icon.classList.add('cart-bounce');
+        setTimeout(() => { icon.classList.remove('cart-bounce'); }, 500);
     }
 
-    btn.addEventListener('click', function () {
-        if (textElement.classList.contains("expanded")) {
-            textElement.classList.remove("expanded");
-            btn.innerHTML = "اقرأ المزيد...";
-        } else {
-            textElement.classList.add("expanded");
-            btn.innerHTML = "عرض أقل";
+    // 2. إظهار شريط التنبيه (Toast)
+    let toast = document.getElementById('toast-message');
+    toast.style.display = 'block';
+    
+    // إخفاء الشريط بعد 3 ثواني
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 3000);
+}
+    function addToCart(name, price) {
+        if (typeof name === 'undefined') {
+            const type = document.getElementById('service-type').value;
+            if (!type || !prices[type]) return;
+            saveToCart(type, prices[type]);
+            
+            return;
         }
+
+        if (typeof price === 'undefined' && prices[name]) {
+            price = prices[name];
+        }
+        saveToCart(name, price);
+    
+    }
+
+    function addToCartProduct(name, price) {
+        addToCart(name, price);
+    }
+
+   function showImage() {
+        const type = document.getElementById('service-type').value;
+        const imgElement = document.getElementById('display-image');
+        const actions = document.getElementById('product-actions');
+        const priceDisplay = document.getElementById('product-price');
+
+        if (!type) {
+            if (imgElement) imgElement.style.display = 'none';
+            if (actions) actions.style.display = 'none';
+            return;
+        }
+
+        // تم تحديث الأسماء هنا لتطابق الأسماء الجديدة التي رفعتها
+        const images = {
+            "ورود": "baqat_alwurood.png",
+            "زفاف": "tashree_sayarat.png",
+            "تخرج": "baqat_altakharr.png",
+            "مناسبة خاصة / حب": "baqat_almunasabat.png",
+            "عيد ميلاد": "baqat_happy_birthday.png",
+            "اعتذار": "baqat_kabira_batchi.png"
+        };
+
+        if (imgElement) {
+            imgElement.src = images[type] || '';
+            imgElement.style.display = 'block';
+        }
+        if (actions) actions.style.display = 'block';
+        if (priceDisplay) priceDisplay.innerText = prices[type] || 0;
+    }
+    
+
+    function zoomImage(src) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalTargetImg');
+        if (modalImg) modalImg.src = src;
+        if (modal) modal.style.display = 'block';
+    }
+
+    function closeImage() {
+        const modal = document.getElementById('imageModal');
+        if (modal) modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('imageModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+// ===== المفضلة =====
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+function toggleFavorite(productName) {
+
+    if (favorites.includes(productName)) {
+        favorites = favorites.filter(item => item !== productName);
+    } else {
+        favorites.push(productName);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    refreshFavorites();
+}
+
+function refreshFavorites() {
+
+    document.querySelectorAll(".favorite-btn").forEach(btn => {
+
+        const product = btn.dataset.product;
+
+        if (favorites.includes(product)) {
+            btn.innerHTML = "♥";
+            btn.classList.add("active");
+        } else {
+            btn.innerHTML = "♡";
+            btn.classList.remove("active");
+        }
+
     });
-});
 
-function toggleReadMore() {
-    const textElement = document.getElementById("about-text");
-    const btn = document.getElementById("readMoreBtn");
-    if (!textElement || !btn) return;
-
-    if (textElement.classList.contains("expanded")) {
-        textElement.classList.remove("expanded");
-        btn.innerHTML = "اقرأ المزيد";
-    } else {
-        textElement.classList.add("expanded");
-        btn.innerHTML = "عرض أقل";
-    }
-}
-function animateCounter(id, start, end, duration) {
-
-    let obj = document.getElementById(id);
-    if (!obj) return;
-
-    let range = end - start;
-    let minTime = 30;
-    let stepTime = Math.max(Math.floor(duration / range), minTime);
-
-    let startTime = new Date().getTime();
-    let endTime = startTime + duration;
-
-    function run() {
-
-        let now = new Date().getTime();
-        let remaining = Math.max((endTime - now) / duration, 0);
-        let value = Math.round(end - (remaining * range));
-
-        if (id === "rating-counter") {
-            obj.innerHTML = (value / 10).toFixed(1) + "★";
-        } else {
-            obj.innerHTML = value + "+";
-        }
-
-        if (now < endTime) {
-            setTimeout(run, stepTime);
-        }
-    }
-
-    run();
+    updateFavoriteCounter();
 }
 
-// تشغيل العدادات عند فتح الصفحة
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Counter Started");
-    animateCounter("orders-counter", 0, 500, 2000);
+function updateFavoriteCounter() {
 
-    animateCounter("customers-counter", 0, 320, 2000);
+    const counter = document.getElementById("fav-count");
 
-    animateCounter("rating-counter", 0, 49, 2000);
+    if (counter) {
+        counter.innerText = favorites.length;
+    }
 
-});
+}
+
+window.addEventListener("DOMContentLoaded", refreshFavorites);
+
+function loadFavoritesPage(){
+
+    function loadFavoritesPage() {
+
+    const container = document.getElementById("favoritesContainer");
+    if (!container) return;
+
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    container.innerHTML = "";
+
+    document.querySelectorAll(".product-card").forEach(card => {
+
+        const btn = card.querySelector(".favorite-btn");
+
+        if (btn && favorites.includes(btn.dataset.product)) {
+            container.appendChild(card.cloneNode(true));
+        }
+
+    });
+
+}
+
+}

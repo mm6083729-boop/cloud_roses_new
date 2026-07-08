@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المفضلة | غيمة وورد</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>❤️ المنتجات المفضلة</h1>
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:15px 20px;">
+
+    <button onclick="history.back()" class="back-btn">
+        ← رجوع
+    </button>
+
+   
+
+    <div>
+        
+    </div>
+
+</header>
+</header>
+
+<div id="favoritesContainer" class="products-grid"></div>
+
+<script src="script.js"></script>
+
+<script>
+function loadFavoritesPage() {
+
+    const container = document.getElementById("favoritesContainer");
+
+    if (!container) return;
+
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    const products = [
+
+        {name:"باقة مناسبات",price:180,image:"baqat_almunasabat.png"},
+        {name:"تشريع سيارات",price:200,image:"tashree_sayarat.png"},
+        {name:"باقة التخرج",price:200,image:"baqat_altakharr.png"},
+        {name:"باقة الحلويات",price:250,image:"baqat_alhalawiyat.png"},
+        {name:"باقة الجمال",price:300,image:"baqat_aljamal.png"},
+        {name:"باقة التخرج2",price:200,image:"baqat_altakharr2.png"},
+        {name:"باقة الفراشة",price:200,image:"baqat_alfarasha.jpg"},
+        {name:"باقة الكتكات",price:200,image:"baqat_alkitkat.png"},
+        {name:"باقة الورود",price:200,image:"baqat_alwurood.png"},
+        {name:"باقة زاهيه",price:200,image:"baqat_zahia.png"},
+        {name:"باقة صغيره",price:200,image:"baqat_sagira.png"},
+        {name:"باقة كبيرة",price:200,image:"baqat_kabira.png"},
+        {name:"باقة كيندر",price:200,image:"baqat_kinder.png"},
+        {name:"باقة30ورده",price:200,image:"baqat_30_warda.png"},
+        {name:"باقة هبي بايرث داي",price:200,image:"baqat_happy_birthday.png"},
+        {name:"باقة وسط",price:200,image:"baqat_wasat.png"},
+        {name:"باقة20ورد",price:200,image:"baqat_20_ward.png"},
+        {name:"باقة كبيرة مع باتشي",price:200,image:"baqat_kabira_batchi.png"},
+        {name:"باقة تنسق ورده",price:200,image:"tansiq_warda.png"},
+        {name:"شنطة كيك",price:200,image:"shanta_cake.png"},
+        {name:"فازة ورده",price:200,image:"faza_warda.png"},
+        {name:"هدية عنوان القهوة",price:200,image:"hadiya_coffee.png"},
+        {name:"فازة مولود",price:200,image:"faza_mawlood.png"}
+
+    ];
+
+    container.innerHTML = "";
+
+    products.forEach(product => {
+
+        if (favorites.includes(product.name)) {
+
+            container.innerHTML += `
+                <div class="product-card">
+
+                    <img src="${product.image}" onclick="zoomImage(this.src)">
+
+                    <h3>${product.name}</h3>
+
+                    <p>${product.price} ريال</p>
+
+                    <button class="add-to-cart-btn"
+                    onclick="addToCartProduct('${product.name}',${product.price})">
+                    أضف للسلة
+                    </button>
+
+                </div>
+            `;
+
+        }
+
+    });
+
+}
+
+loadFavoritesPage();
+</script>
+
+</body>
+</html>
