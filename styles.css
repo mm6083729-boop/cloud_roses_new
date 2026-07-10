@@ -489,3 +489,19 @@ textarea {
     background:#c24673;
 }
 
+.floating-whatsapp{
+    position:fixed !important;
+    bottom:20px !important;
+    right:20px !important;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-decoration:none;
+    z-index:99999;
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الدعم الفني | غيمة وورد</title>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="support.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-area">
+
+<img src="logo.png" alt="Cloud & Roses">
+
+<div>
+
+<h2>غيمة وورد</h2>
+<p>Cloud & Roses</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<a href="index.html">الرئيسية</a>
+<a href="favorites.html">المفضلة</a>
+<a href="cart.html">السلة</a>
+<a href="support.html" class="active">الدعم الفني</a>
+
+</nav>
+
+</header>
+
+
+<div class="support-container">
+
+<div class="welcome-card">
+
+<i class="fa-solid fa-headset"></i>
+
+<h1>مركز الدعم الفني</h1>
+
+<p>
+
+يسعدنا خدمتك والإجابة على جميع استفساراتك.
+
+إذا واجهت أي مشكلة في الطلب أو الدفع أو احتجت لأي مساعدة،
+
+فريق غيمة وورد جاهز لخدمتك.
+
+</p>
+
+</div>
+
+
+
+<div class="contact-grid">
+
+
+<a href="https://wa.me/966501223800"
+target="_blank"
+class="contact-card">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<h3>واتساب</h3>
+
+<p>0501223800</p>
+
+</a>
+
+
+
+<a href="tel:+966501223800"
+class="contact-card">
+
+<i class="fa-solid fa-phone"></i>
+
+<h3>اتصال مباشر</h3>
+
+<p>اتصل بنا</p>
+
+</a>
+
+
+
+<a href="https://instagram.com/"
+target="_blank"
+class="contact-card">
+
+<i class="fa-brands fa-instagram"></i>
+
+<h3>إنستقرام</h3>
+
+<p>تابع أحدث الباقات</p>
+
+</a>
+
+
+
+<a href="https://maps.app.goo.gl/bKW6Bk9FFn4KeRBr8"
+target="_blank"
+class="contact-card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>الموقع</h3>
+
+<p>المدينة المنورة</p>
+
+</a>
+
+</div>
+
+
+
+<div class="work-hours">
+
+<h2>
+
+<i class="fa-regular fa-clock"></i>
+
+ساعات العمل
+
+</h2>
+
+<p>
+
+من السبت إلى الجمعة
+
+</p>
+
+<h3>
+
+04:00 مساءً - 12:00 منتصف الليل
+
+</h3>
+
+</div>
+
+
+
+<div class="feedback-card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h2>رأيك يهمنا</h2>
+
+<p>
+
+نسعد دائماً بآرائكم ومقترحاتكم لتطوير خدمات غيمة وورد
+
+وتقديم أفضل تجربة تسوق.
+
+</p>
+
+<button onclick="window.open('https://wa.me/966501223800')">
+
+إرسال رأيك
+
+</button>
+
+</div>
+
+
+
+<div class="faq-section">
+
+<h2>
+
+الأسئلة الشائعة
+
+</h2>
+
+<button class="faq-btn">
+
+كم يستغرق تجهيز الطلب؟
+
+<span>+</span>
+
+</button>
+
+<div class="faq-content">
+
+عادة يتم تجهيز الطلب خلال وقت قصير حسب نوع الباقة.
+
+</div>
+
+
+
+<button class="faq-btn">
+
+هل يوجد توصيل داخل المدينة؟
+
+<span>+</span>
+
+</button>
+
+<div class="faq-content">
+
+نعم، نوفر خدمة التوصيل داخل المدينة المنورة.
+
+</div>
+
+
+
+<button class="faq-btn">
+
+هل أستطيع تعديل الطلب؟
+
+<span>+</span>
+
+</button>
+
+<div class="faq-content">
+
+يمكنك التواصل معنا عبر واتساب قبل بدء تجهيز الطلب.
+
+</div>
+
+
+
+<button class="faq-btn">
+
+ما هي ساعات العمل؟
+
+<span>+</span>
+
+</button>
+
+<div class="faq-content">
+
+من 4:30 مساءً حتى 12:00 منتصف الليل.
+
+</div>
+
+</div>
+
+
+
+<div class="message-card">
+
+<h2>
+
+أرسل استفسارك
+
+</h2>
+
+<form onsubmit="sendSupport(event)">
+
+<input
+type="text"
+id="name"
+placeholder="الاسم"
+required>
+
+<input
+type="tel"
+id="phone"
+placeholder="رقم الجوال"
+required>
+
+<textarea
+id="message"
+rows="6"
+placeholder="اكتب رسالتك..."
+required></textarea>
+
+<button type="submit">
+
+إرسال عبر واتساب
+
+</button>
+
+</form>
+
+</div>
+
+
+
+<button
+class="support-btn"
+onclick="window.open('https://wa.me/966501223800')">
+
+💬 تواصل مع الدعم الفني
+
+</button>
+
+</div>
+
+<script src="support.js"></script>
+
+</body>
+
+</html>
