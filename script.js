@@ -179,3 +179,31 @@ function loadFavoritesPage(){
 }
 
 }
+function filterProducts(category,button){
+
+document.querySelectorAll(".category-btn").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+document.querySelectorAll(".product-card").forEach(card=>{
+
+if(category==="all"){
+
+card.style.display="block";
+
+}else{
+
+card.style.display=
+card.dataset.category===category
+?
+"block"
+:
+"none";
+
+}
+
+});
+
+}
