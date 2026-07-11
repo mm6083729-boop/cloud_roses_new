@@ -209,7 +209,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     animateCounter("customers-counter", 0, 320, 2000);
 
-    animateCounter("rating-counter", 0, 49, 2000);
+    animateCounter("rating-counter", 0, 100, 2000);
 
 };
 </script>
@@ -256,6 +256,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <br>
 
+    <div class="categories">
+
+<button class="category-btn active" onclick="filterProducts('all',this)">
+🌹 جميع المنتجات
+</button>
+
+<button class="category-btn" onclick="filterProducts('ورد',this)">
+💐 باقات الورد
+</button>
+
+<button class="category-btn" onclick="filterProducts('كيك',this)">
+🎂 كيك
+</button>
+
+<button class="category-btn" onclick="filterProducts('مواليد',this)">
+🎂 مواليد
+</button>
+
+<button class="category-btn" onclick="filterProducts('هدايا',this)">
+🎁 هدايا
+</button>
+
+<button class="category-btn" onclick="filterProducts('تشريع',this)">
+🚗 تشريع سيارات
+</button>
+
+<button class="category-btn" onclick="filterProducts('تخرج',this)">
+🎓 تخرج
+</button>
+
+<button class="category-btn" onclick="filterProducts('اعياد ميلاد',this)">
+🎂 اعياد ميلاد
+</button>
+
+</div>
+
+
     <div class="products-grid"> 
 
         
@@ -271,7 +308,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="تشريع">
             <img src="tashree_sayarat.png" alt="" onclick="zoomImage(this.src)">
             <h3>تشريع سيارات</h3>
             <p class="description"></p>
@@ -282,7 +319,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="تخرج">
             <img src="baqat_altakharr.png" alt="" onclick="zoomImage(this.src)"> 
             <h3>باقة التخرج</h3>
             <p class="description"></p>
@@ -293,7 +330,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="كيك">
             <img src="baqat_alhalawiyat.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة الحلويات</h3>
             <p class="description"></p>
@@ -304,7 +341,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_aljamal.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة الجمال</h3>
             <p class="description"></p>
@@ -315,7 +352,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="تخرج">
             
             <img src="baqat_altakharr2.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة التخرج2</h3>
@@ -327,7 +364,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>       
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_alfarasha.jpg" alt="" onclick="zoomImage(this.src)">
             <h3>باقة الفراشة</h3>
             <p class="description"></p>
@@ -338,7 +375,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="كيك">
             <img src="baqat_alkitkat.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة الكتكات</h3>
             <p class="description"></p>
@@ -349,7 +386,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_alwurood.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة الورود</h3>
             <p class="description"></p>
@@ -358,9 +395,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             <button class="favorite-btn" data-product="باقة الورود" onclick="toggleFavorite('باقة الورود')">
       ♡
 </button>
+
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_zahia.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة زاهيه</h3>
             <p class="description"></p>
@@ -371,7 +409,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_sagira.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة صغيره</h3>
             <p class="description"></p>
@@ -382,7 +420,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_kabira.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة كبيرة</h3>
             <p class="description"></p>
@@ -393,7 +431,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="كيك">
             <img src="baqat_kinder.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة كيندر</h3>
             <p class="description"></p>
@@ -404,7 +442,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div> 
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_30_warda.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة30ورده</h3>
             <p class="description"></p>
@@ -415,7 +453,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
          
-        <div class="product-card">
+        <div class="product-card" data-category="اعياد ميلاد">
             <img src="baqat_happy_birthday.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة هبي بايرث داي</h3>
             <p class="description"></p>
@@ -426,7 +464,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_wasat.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة وسط</h3>
             <p class="description"></p>
@@ -437,7 +475,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_20_ward.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقة20ورد</h3>
             <p class="description"></p>
@@ -448,7 +486,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="baqat_kabira_batchi.png" alt="" onclick="zoomImage(this.src)">
             <h3>باقه كبيرة مع باتشي</h3>
             <p class="description"></p>
@@ -459,7 +497,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="tansiq_warda.png" alt="" onclick="zoomImage(this.src)">
             <h3>تنسق ورده</h3>
             <p class="description"></p>
@@ -470,7 +508,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="كيك">
             <img src="shanta_cake.png" alt="" onclick="zoomImage(this.src)">
             <h3>شنطة كيك</h3>
             <p class="description"></p>
@@ -481,7 +519,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="ورد">
             <img src="faza_warda.png" alt="" onclick="zoomImage(this.src)">
             <h3>فازة ورده</h3>
             <p class="description"></p>
@@ -492,7 +530,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="هدايا">
             <img src="hadiya_coffee.png" alt="" onclick="zoomImage(this.src)">
             <h3>هدية عنوان القهوة</h3>
             <p class="description"></p>
@@ -503,7 +541,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-category="مواليد">
             <img src="faza_mawlood.png" alt="" onclick="zoomImage(this.src)">
             <h3>فازة مولود</h3>
             <p class="description"></p>
