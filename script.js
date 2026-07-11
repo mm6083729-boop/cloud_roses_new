@@ -206,4 +206,8 @@ card.dataset.category===category
 
 });
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5bb51192c4ff0f1565d5630bef8099d104c5823e
